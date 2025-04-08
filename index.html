@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Secret Love Story</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff0f5;
+      color: #333;
+    }
+
+    .centered {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #d63384;
+    }
+
+    input[type="password"] {
+      padding: 12px;
+      font-size: 16px;
+      margin: 15px 0;
+      border: 2px solid #ff69b4;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 300px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+    }
+
+    .hint {
+      font-size: 14px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 10px;
+    }
+
+    .memory-block {
+      background: #fff;
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .memory-block img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #555;
+      font-style: italic;
+    }
+
+    .love-sticker {
+      text-align: center;
+      margin-top: 40px;
+      animation: pulse 2s infinite;
+    }
+
+    .love-sticker img {
+      max-width: 150px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(255,105,180, 0.3);
+    }
+
+    .love-sticker p {
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #d63384;
+      font-family: 'Courier New', monospace;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 { font-size: 1.8em; }
+      .caption { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Secret Code Page -->
+  <div class="centered" id="secretPage">
+    <h1>💌 Our Secret Story</h1>
+    <p class="hint">Hint: The most precious day (ddmmyyyy) 💖</p>
+    <input type="password" id="secretInput" placeholder="Enter the secret code..." />
+    <button onclick="checkSecret()">Unlock</button>
+  </div>
+
+  <!-- Surprise Page -->
+  <div class="centered hidden" id="openSurprise">
+    <h1>🎁 Ready for the Surprise?</h1>
+    <button onclick="showTimeline()">Open Surprise</button>
+  </div>
+
+  <!-- Love Timeline Page -->
+  <div id="timelinePage" class="timeline hidden">
+    <div class="memory-block">
+      <img src="images/image1.png" alt="Page 1">
+      <div class="caption">I saw him for the first time when I was in 8th grade… and something just stayed.</div>
+    </div>
+    <div class="memory-block">
+      <img src="images/image2.png" alt="Page 2">
+      <div class="caption">Years passed. My heart still remembered him.</div>
+    </div>
+    <div class="memory-block">
+      <img src="images/image10.png" alt="Page 3">
+      <div class="caption">December 23, 2022 – he texted. After 8 years, the silence was finally broken.</div>
+    </div>
+    <div class="memory-block">
+      <img src="images/image3.png" alt="Page 4">
+      <div class="caption">On April 19, 2023 – he said yes. My world lit up.</div>
+    </div>
+    <div class="memory-block">
+      <img src="images/image4.png" alt="Page 5">
+      <div class="caption">We started talking… and never stopped.</div>
+    </div>
+    <div class="memory-block">
+      <img src="images/image5.png" alt="Page 6">
+      <div class="caption">We shared everything—dreams, fears, even baby names.</div>
+    </div>
+    <div class="memory-block">
+      <img src="images/image6.png" alt="Page 7">
+      <div class="caption">We named our future babies—Alba & Nova.</div>
+    </div>
+    <div class="memory-block">
+      <img src="images/image7.png" alt="Page 8">
+      <div class="caption">We fought. Broke up. Reconnected. Again.</div>
+    </div>
+    <div class="memory-block">
+      <img src="images/image8.png" alt="Page 9">
+      <div class="caption">Life is hard now. But we still care. Always.</div>
+    </div>
+    <div class="memory-block">
+      <img src="images/image9.png" alt="Page 10">
+      <div class="caption">We hope to meet in October 2025. For real.</div>
+    </div>
+    <div class="memory-block">
+        <img src="images/image11.jpg" alt="Page 11">
+        <div class="caption">Love you</div>
+      </div>
+
+    <!-- Love Sticker & Message -->
+    <div class="love-sticker">
+      <img src="image11.jpg" alt="Love Sticker" />
+      <p>💖 Loving you a little more every day... 💖</p>
+    </div>
+  </div>
+
+  <script>
+    function checkSecret() {
+      const code = document.getElementById("secretInput").value;
+      if (code === "19042023") {
+        document.getElementById("secretPage").classList.add("hidden");
+        document.getElementById("openSurprise").classList.remove("hidden");
+      } else {
+        alert("Oops! Wrong code! Try again.");
+      }
+    }
+
+    function showTimeline() {
+      document.getElementById("openSurprise").classList.add("hidden");
+      document.getElementById("timelinePage").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
